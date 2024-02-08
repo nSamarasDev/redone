@@ -19,5 +19,9 @@ if (process.env.NODE_ENV === "development") {
     app.use(morgan("dev"))
 }
 
-///////
+app.use("/api/users", require("./routes/api/user"));
+app.use("/api/auth", require("./routes/api/auth"));
+app.use("/api/contact", require("./routes/api/contact"));
+
+//////////
 app.listen(PORT, () => console.log(`Server running on ${PORT}`))
